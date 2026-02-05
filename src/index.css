@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Photo Studio Design System
+   Inspired by classic Kodak warmth, European minimal studios
+   Colors: Warm ivory, charcoal, amber gold accent
+*/
+
+@layer base {
+  :root {
+    /* Warm ivory/cream background */
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    /* Cards with subtle warmth */
+    --card: 40 25% 97%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Warm amber/gold - Kodak-inspired */
+    --primary: 35 80% 50%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Soft warm gray */
+    --secondary: 35 15% 92%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 35 10% 93%;
+    --muted-foreground: 30 8% 45%;
+
+    /* Accent - deeper amber */
+    --accent: 30 70% 45%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 90%;
+    --ring: 35 80% 50%;
+
+    --radius: 0.375rem;
+
+    /* Custom studio variables */
+    --studio-cream: 40 33% 96%;
+    --studio-ivory: 45 30% 98%;
+    --studio-charcoal: 30 10% 20%;
+    --studio-warm-gray: 35 8% 55%;
+    --studio-gold: 35 80% 50%;
+    --studio-gold-dark: 30 70% 42%;
+    --studio-sepia: 30 25% 75%;
+
+    /* Sidebar (if needed) */
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 35 80% 50%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 35 15% 92%;
+    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 35 80% 50%;
+  }
+
+  .dark {
+    /* Rich warm dark background */
+    --background: 30 15% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 30 12% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    /* Warm gold in dark mode */
+    --primary: 38 75% 55%;
+    --primary-foreground: 30 15% 8%;
+
+    --secondary: 30 10% 18%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 30 8% 20%;
+    --muted-foreground: 35 10% 60%;
+
+    --accent: 35 65% 50%;
+    --accent-foreground: 30 15% 8%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 22%;
+    --ring: 38 75% 55%;
+
+    /* Dark mode studio variables */
+    --studio-cream: 30 12% 15%;
+    --studio-ivory: 30 10% 12%;
+    --studio-charcoal: 40 15% 85%;
+    --studio-warm-gray: 35 8% 60%;
+    --studio-gold: 38 75% 55%;
+    --studio-gold-dark: 35 70% 48%;
+    --studio-sepia: 30 15% 35%;
+
+    --sidebar-background: 30 12% 10%;
+    --sidebar-foreground: 40 15% 85%;
+    --sidebar-primary: 38 75% 55%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 30 10% 18%;
+    --sidebar-accent-foreground: 40 15% 85%;
+    --sidebar-border: 30 10% 20%;
+    --sidebar-ring: 38 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Elegant section styling */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-studio {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Photo frame effect */
+  .photo-frame {
+    @apply bg-card p-2 shadow-lg;
+    box-shadow: 
+      0 2px 4px hsl(var(--studio-sepia) / 0.1),
+      0 8px 24px hsl(var(--studio-sepia) / 0.15),
+      inset 0 0 0 1px hsl(var(--border));
+  }
+
+  /* Vintage overlay for images */
+  .vintage-overlay {
+    @apply relative;
+  }
+  
+  .vintage-overlay::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+      135deg,
+      hsl(35 30% 90% / 0.08) 0%,
+      transparent 50%,
+      hsl(30 20% 30% / 0.05) 100%
+    );
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    @apply h-px bg-gradient-to-r from-transparent via-primary to-transparent;
+  }
+
+  /* Elegant button styles */
+  .btn-studio {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           font-sans text-sm font-medium tracking-wide uppercase
+           transition-all duration-300 ease-out;
+  }
+
+  .btn-studio-primary {
+    @apply btn-studio bg-primary text-primary-foreground
+           hover:bg-accent shadow-md hover:shadow-lg;
+  }
+
+  .btn-studio-outline {
+    @apply btn-studio border border-primary text-primary
+           hover:bg-primary hover:text-primary-foreground;
+  }
+
+  /* Service card hover effect */
+  .service-card {
+    @apply bg-card p-6 md:p-8 transition-all duration-500 ease-out
+           border border-transparent hover:border-border
+           hover:shadow-xl;
+  }
+
+  /* Gallery image hover */
+  .gallery-image {
+    @apply overflow-hidden cursor-pointer;
+  }
+
+  .gallery-image img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .gallery-image:hover img {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  /* Smooth fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-slow {
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Sepia filter for vintage look */
+  .filter-vintage {
+    filter: sepia(0.1) saturate(0.95) contrast(1.02);
+  }
+}
