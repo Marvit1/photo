@@ -2,7 +2,7 @@
  import { Check } from 'lucide-react';
  import { useLanguage } from '@/i18n/LanguageContext';
 import restorationDemo from '@/assets/restoration-demo.jpg';
-import aramImg from '@/assets/aram.jpg';
+import aramImg from '@/assets/pk.jpg';
  
  export default function Restoration() {
    const { t } = useLanguage();

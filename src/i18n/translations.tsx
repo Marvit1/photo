@@ -87,6 +87,7 @@
      rights: string;
      privacy: string;
      terms: string;
+     backToTop?: string;
    };
  };
  
@@ -102,7 +103,7 @@
      hero: {
        studio: 'Kodak Abovyan 35',
        slogan: 'Capturing moments that last forever',
-      /// tagline: 'Professional photography services & classic photo printing since 2002',
+       tagline: 'Professional photography services & classic photo printing since 1992',
        cta: 'View Services',
        findUs: 'Find Us',
      },
@@ -207,6 +208,7 @@
        rights: 'All rights reserved',
        privacy: 'Privacy Policy',
        terms: 'Terms of Service',
+       backToTop: 'Back to top',
      },
    },
    ru: {
@@ -220,7 +222,7 @@
      hero: {
        studio: 'Kodak Abovyan 35',
        slogan: 'Запечатлеваем моменты навсегда',
-       ///tagline: 'Профессиональные фотоуслуги и классическая фотопечать с 2002 года',
+       tagline: 'Профессиональные фотоуслуги и классическая фотопечать с 1992 года',
        cta: 'Наши услуги',
        findUs: 'Как нас найти',
      },
@@ -325,6 +327,7 @@
        rights: 'Все права защищены',
        privacy: 'Политика конфиденциальности',
        terms: 'Условия использования',
+       backToTop: 'Наверх',
      },
    },
    hy: {
@@ -338,7 +341,7 @@
      hero: {
        studio: 'Kodak Abovyan 35 ',
        slogan: 'Պահերը, որոնք կմնան հավերժ',
-       ///tagline: 'Մասնագիտական լուսանկարչական ծառայություններ և դասական ֆոտոտպագրություն 2002 թվականից',
+       tagline: 'Մասնագիտական լուսանկարչական ծառայություններ և դասական ֆոտոտպագրություն 1992 թվականից',
        cta: 'Տեսնել ծառայությունները',
        findUs: 'Գտնել մեզ',
      },
@@ -443,6 +446,7 @@
        rights: 'Բոլոր իրավունքները պաշտպանված են',
        privacy: 'Գաղտնիության քաղաքականություն',
        terms: 'Օգտագործման պայմաններ',
+       backToTop: 'Վերև',
      },
    }
    
