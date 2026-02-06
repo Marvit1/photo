@@ -1,7 +1,7 @@
  import { motion } from 'framer-motion';
  import { ChevronDown } from 'lucide-react';
  import { useLanguage } from '@/i18n/LanguageContext';
-import heroImage from '@/assets/hop.png';
+import heroImage from '@/assets/hero-studio.jpg';
  
  export default function Hero() {
    const { t } = useLanguage();
